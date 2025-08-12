@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  background-color: #0f0f0f;
+  color: #00ffcc;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  padding: 20px;
+}
+nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+}
+
+.home-link {
+  color: #ff00ff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border: 1px solid #ff00ff;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #ff006e;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px #000;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: #222;
+  border: 4px solid #ff00ff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #00ffcc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.1s ease, background-color 0.2s;
+}
+
+.cell:hover {
+  background-color: #444;
+  transform: scale(1.05);
+}
+
+.cell.X {
+  color: #00ffff;
+}
+
+.cell.O {
+  color: #ffcc00;
+}
+
+.winning-message {
+  display: none;
+  margin-top: 30px;
+  font-size: 1rem;
+  color: #00ffcc;
+  text-shadow: 1px 1px #000;
+}
+
+.winning-message.show {
+  display: block;
+  animation: blink 1s infinite;
+}
+
+#restartButton {
+  background-color: #ff006e;
+  color: #fff;
+  border: none;
+  font-family: 'Press Start 2P', cursive;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  box-shadow: 0 0 10px #ff00ff;
+  transition: background-color 0.3s;
+}
+
+#restartButton:hover {
+  background-color: #ff1493;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.game-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.arcade-character {
+   width: 500px;   
+  height: 500px;
+  background-image: url("mario-right.png");
+  background-size: cover;
+  animation: bounce 1s infinite;
+  filter: drop-shadow(0 0 5px #ff00ff);
+}
+
+.arcade-character.left {
+   width: 500px;   
+  height: 500px;
+  background-image: url("mario-left.png");
+  background-size: cover;
+  animation: bounce 1s infinite;
+  filter: drop-shadow(0 0 5px #ff00ff);
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0) scaleX(1);
+  }
+  50% {
+    transform: translateY(-10px) scaleX(1);
+  }
+}

@@ -1,0 +1,202 @@
+/* ===== Arcade Game Global Styles ===== */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  background: radial-gradient(circle at center, #050505 0%, #000 100%);
+  color: #00ffcc;
+  font-family: 'Press Start 2P', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+/* ===== Scanline Effect ===== */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.02) 0px,
+    rgba(255, 255, 255, 0.02) 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.home-link {
+  color: #ff00ff;
+  text-decoration: none;
+  font-size: 12px;
+  text-shadow: 0 0 6px #ff00ff;
+}
+
+.home-link:hover {
+  color: #fff;
+}
+
+/* ===== Arcade Card ===== */
+.card {
+  background: #111;
+  padding: 25px;
+  border-radius: 8px;
+  border: 4px solid #ff00ff;
+  box-shadow: 0 0 25px #ff00ff, inset 0 0 20px rgba(255, 0, 255, 0.4);
+  width: 95%;
+  max-width: 550px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===== Title ===== */
+h1 {
+  font-size: 18px;
+  color: #ff00ff;
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff33ff;
+  margin-bottom: 12px;
+}
+
+/* ===== Difficulty Label ===== */
+label[for="difficulty"] {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 10px;
+  color: #ffff00;
+  text-shadow: 0 0 6px #ffff00;
+}
+
+/* ===== Difficulty Dropdown ===== */
+#difficulty {
+  padding: 8px 12px;
+  border: 3px solid #ff00ff;
+  background: #000;
+  color: #00ffcc;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  box-shadow: 0 0 8px #ff00ff;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+#difficulty option {
+  background: #000;
+  color: #00ffcc;
+}
+
+/* ===== Controls ===== */
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin: 15px 0;
+}
+
+input[type="number"] {
+  padding: 8px;
+  font-family: 'Press Start 2P', cursive;
+  border: 3px solid #00ffcc;
+  background: black;
+  color: #00ffcc;
+  box-shadow: inset 0 0 10px rgba(0, 255, 204, 0.3);
+  border-radius: 0;
+  min-width: 150px;
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 12px #00ffcc;
+}
+
+/* ===== Buttons Container ===== */
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* ===== Buttons ===== */
+button {
+  padding: 8px 12px;
+  border: 3px solid #00ffcc;
+  background: #000;
+  color: #00ffcc;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 8px #00ffcc, inset 0 0 8px rgba(0,255,204,0.3);
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: #00ffcc;
+  color: #000;
+  box-shadow: 0 0 12px #00ffcc;
+}
+
+.secondary {
+  border-color: #ff00ff;
+  color: #ff00ff;
+  box-shadow: 0 0 8px #ff00ff, inset 0 0 8px rgba(255,0,255,0.3);
+}
+
+.secondary:hover {
+  background: #ff00ff;
+  color: #000;
+  box-shadow: 0 0 12px #ff00ff;
+}
+
+/* ===== Info Pills ===== */
+.pill {
+  background: black;
+  border: 3px solid #00ffcc;
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin: 5px;
+  font-size: 8px;
+  box-shadow: 0 0 6px #00ffcc;
+}
+
+/* ===== Message ===== */
+.message {
+  margin-top: 20px;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.message.success {
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffee;
+}
+
+.message.error {
+  color: #ff4444;
+  text-shadow: 0 0 10px #ff4444, 0 0 20px #ff0000;
+}
+
+/* ===== Footer ===== */
+.footer {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 8px;
+  text-shadow: 0 0 6px #00ffcc;
+}

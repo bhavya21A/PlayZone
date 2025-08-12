@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  background: #111;
+  color: #0f0;
+  font-family: 'Press Start 2P', monospace;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+}
+
+.home-link {
+  color: #0f0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border: 1px solid #0f0;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.arcade-character {
+  width: 120px;
+  height: 120px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 0 10px #ff00ff);
+}
+
+.arcade-character.left {
+  width: 400px;   
+  height: 400px;
+  background-image: url("snake.png");
+  background-size: cover;
+  animation: bounce 1s infinite;
+  filter: drop-shadow(0 0 5px #ff00ff);
+
+}
+
+.arcade-character.right {
+  width: 400px;   
+  height: 400px;
+  background-image: url("snake.png");
+  transform: scaleX(-1);
+  background-size: cover;
+  animation: bounce 1s infinite;
+  filter: drop-shadow(0 0 5px #ff00ff);
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0) scaleX(1);
+  }
+  50% {
+    transform: translateY(-10px) scaleX(1);
+  }
+}
+
+
+.center-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #0f0;
+  text-shadow: 0 0 10px #0f0;
+}
+
+#gameCanvas {
+  border: 2px solid lime;
+  background: black;
+  box-shadow: 0 0 10px #0f0;
+}
+
+.hud {
+  margin-top: 15px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+#score {
+  font-size: 1rem;
+}
+
+#resetBtn {
+  padding: 5px 10px;
+  background: transparent;
+  border: 1px solid #0f0;
+  color: #0f0;
+  font-family: 'Press Start 2P', monospace;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+#resetBtn:hover {
+  background: #0f0;
+  color: black;
+}
