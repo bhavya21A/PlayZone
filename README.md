@@ -21,7 +21,7 @@ The project contains multiple classic and arcade-style games, all accessible fro
 
 1. **Clone this repository**
    ```bash
-   git clone https://github.com/your-username/playzone.git
+   git clone https://github.com/bhavya21A/playzone.git
 2. **Open the main file**
 Navigate to the project folder.
 Open Main.html in your browser.
